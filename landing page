@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circle Media | TV + Streaming</title>
+  <style>
+    :root{
+      --black:#08080c;
+      --white:#ffffff;
+      --soft:#f5f5f8;
+      --gray:#777788;
+      --line:#e8e8ee;
+      --pink:#ff2aa3;
+      --purple:#6726ff;
+      --blue:#18b6ff;
+      --dark:#111118;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--white);color:var(--black)}
+    .topbar{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 7vw;border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}
+    .logo{font-weight:900;letter-spacing:-.04em;font-size:28px}.logo span{font-weight:500;margin-left:8px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray)}
+    .top-cta{background:var(--black);color:#fff;text-decoration:none;padding:13px 20px;border-radius:999px;font-weight:800;font-size:14px}
+    .hero{position:relative;overflow:hidden;padding:78px 7vw 72px;background:linear-gradient(135deg,#fff 0%,#f7f7fb 55%,#fff 100%)}
+    .hero:before{content:"";position:absolute;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,var(--pink),var(--purple) 48%,transparent 70%);right:-180px;top:-210px;opacity:.17}.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--blue),transparent 65%);left:-160px;bottom:-220px;opacity:.18}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .72fr;gap:52px;align-items:center;max-width:1240px;margin:0 auto}
+    .eyebrow{display:inline-block;padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#383844;margin-bottom:25px}
+    h1{font-size:64px;line-height:.93;letter-spacing:-.06em;margin:0 0 24px;max-width:760px}h1 strong{background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sub{font-size:21px;line-height:1.45;color:#343442;max-width:690px;margin:0 0 34px}.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:999px;text-decoration:none;font-weight:900}.btn.primary{background:linear-gradient(90deg,var(--pink),var(--purple));color:#fff}.btn.secondary{border:1px solid var(--line);color:var(--black);background:#fff}
+    .proof{margin-top:32px;color:var(--gray);font-size:13px}.proof b{color:var(--black)}
+    .form-card{background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px;box-shadow:0 24px 70px rgba(18,18,32,.12)}.form-card h2{font-size:27px;letter-spacing:-.04em;margin:0 0 8px}.form-card p{margin:0 0 20px;color:var(--gray);line-height:1.4}.field{margin-bottom:12px}.field input,.field select{width:100%;height:50px;border:1px solid var(--line);border-radius:14px;padding:0 15px;font-size:14px;background:#fbfbfd}.form-note{font-size:11px;color:#8b8b98;line-height:1.4;margin-top:12px}
+    section{padding:72px 7vw}.wrap{max-width:1240px;margin:0 auto}.section-title{font-size:42px;line-height:1.02;letter-spacing:-.05em;margin:0 0 16px}.section-copy{font-size:18px;line-height:1.55;color:#555566;max-width:760px;margin:0 0 34px}.logos{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.logo-tile{height:88px;border:1px solid var(--line);border-radius:20px;display:flex;align-items:center;justify-content:center;background:#fff;font-weight:900;color:#21212b;letter-spacing:-.02em}
+    .problem{background:var(--black);color:#fff}.problem .section-copy{color:#c8c8d2}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055);border-radius:24px;padding:26px}.card h3{font-size:22px;margin:0 0 10px;letter-spacing:-.03em}.card p{margin:0;color:#d2d2dc;line-height:1.45}
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.service{border:1px solid var(--line);border-radius:22px;padding:24px;background:#fff;min-height:116px}.service b{display:block;font-size:18px;margin-bottom:8px}.service span{color:var(--gray);font-size:14px;line-height:1.4}
+    .case{background:#f6f6fa}.case-box{display:grid;grid-template-columns:.78fr 1fr;gap:32px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:32px;padding:36px}.case-tag{display:inline-block;background:#111118;color:#fff;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;margin-bottom:16px}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.metric{background:#f7f7fa;border-radius:18px;padding:18px}.metric b{display:block;font-size:27px;letter-spacing:-.04em}.metric span{font-size:12px;color:var(--gray)}
+    .method{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}.funnel{display:grid;gap:12px}.step{border-radius:22px;padding:22px;background:linear-gradient(90deg,rgba(255,42,163,.12),rgba(103,38,255,.1));border:1px solid var(--line)}.step b{display:block;font-size:20px}.step span{color:#60606f;font-size:14px}
+    .final{background:linear-gradient(135deg,#0b0b12,#241251 58%,#111118);color:#fff;text-align:center;padding:76px 7vw}.final h2{font-size:48px;line-height:1;letter-spacing:-.05em;margin:0 0 18px}.final p{color:#dedee8;font-size:18px;margin:0 auto 28px;max-width:720px}.final .btn{background:#fff;color:#111118}
+    @media(max-width:900px){.hero-grid,.case-box,.method{grid-template-columns:1fr}h1{font-size:46px}.logos,.services-grid,.cards,.metric-grid{grid-template-columns:1fr 1fr}.topbar{padding:0 22px}section,.hero{padding-left:22px;padding-right:22px}}
+    @media(max-width:560px){.logos,.services-grid,.cards,.metric-grid{grid-template-columns:1fr}.top-cta{display:none}h1{font-size:38px}.sub{font-size:18px}.section-title{font-size:34px}.final h2{font-size:37px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">CIRCLE <span>media agency</span></div>
+    <a class="top-cta" href="#diagnostico">Solicitar diagnóstico</a>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">TV + Streaming + Connected TV</div>
+          <h1>Tu audiencia ya no está viendo solo <strong>televisión.</strong></h1>
+          <p class="sub">Diseñamos estrategias de TV, Streaming y Connected TV para generar alcance incremental, reducir desperdicio y colocar tu marca en los momentos de mayor atención.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#diagnostico">Solicitar diagnóstico de medios</a>
+            <a class="btn secondary" href="#caso">Ver caso ABC</a>
+          </div>
+          <div class="proof">Planeación, negociación, compra, optimización y monitoreo para marcas como <b>Valvoline, ABC, GS1, TEKA y Price Shoes.</b></div>
+        </div>
+        <aside class="form-card" id="diagnostico">
+          <h2>Agenda un diagnóstico</h2>
+          <p>Revisamos tu inversión actual y detectamos oportunidades de alcance, frecuencia y eficiencia.</p>
+          <form>
+            <div class="field"><input placeholder="Nombre" /></div>
+            <div class="field"><input placeholder="Empresa" /></div>
+            <div class="field"><input placeholder="Correo corporativo" /></div>
+            <div class="field"><input placeholder="WhatsApp" /></div>
+            <div class="field"><select><option>Presupuesto mensual estimado</option><option>$100k - $300k MXN</option><option>$300k - $800k MXN</option><option>$800k+ MXN</option></select></div>
+            <a class="btn primary" style="width:100%" href="#">Quiero mi diagnóstico</a>
+          </form>
+          <div class="form-note">Al enviar tus datos aceptas ser contactado por Circle Media Agency para fines comerciales.</div>
+        </aside>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Marcas que han confiado en Circle</h2>
+        <p class="section-copy">Usamos data, negociación y entendimiento del consumidor mexicano para construir planes omnicanal con impacto real.</p>
+        <div class="logos"><div class="logo-tile">VALVOLINE</div><div class="logo-tile">ABC</div><div class="logo-tile">GS1</div><div class="logo-tile">TEKA</div><div class="logo-tile">PRICE SHOES</div></div>
+      </div>
+    </section>
+    <section class="problem">
+      <div class="wrap">
+        <h2 class="section-title">El problema no es comprar medios. Es evitar comprar de más.</h2>
+        <p class="section-copy">La fragmentación entre TV abierta, TV paga, YouTube, CTV, Netflix, ViX, Prime Video y Disney genera duplicidad de audiencias, frecuencias excesivas y reportes desconectados.</p>
+        <div class="cards"><div class="card"><h3>Audiencias duplicadas</h3><p>El mismo consumidor puede recibir impactos en diferentes plataformas sin control real de frecuencia.</p></div><div class="card"><h3>Desperdicio geográfico</h3><p>Muchas marcas con operación local terminan pagando cobertura nacional innecesaria.</p></div><div class="card"><h3>Métricas aisladas</h3><p>Cada plataforma reporta su propio universo, dificultando la atribución y la optimización del plan.</p></div></div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Un solo ecosistema de video</h2>
+        <p class="section-copy">Integramos los principales puntos de contacto de video para construir cobertura, afinidad y recordación.</p>
+        <div class="services-grid"><div class="service"><b>TV abierta</b><span>Cobertura masiva y eventos de alto alcance.</span></div><div class="service"><b>TV paga</b><span>Segmentación por contenido, afinidad y deportes.</span></div><div class="service"><b>Connected TV</b><span>Smart TVs, apps, AVOD, FAST y audiencias digitales.</span></div><div class="service"><b>Streaming</b><span>Netflix, Prime Video, Disney+, ViX y YouTube.</span></div></div>
+      </div>
+    </section>
+    <section class="case" id="caso">
+      <div class="wrap case-box">
+        <div><span class="case-tag">Caso de referencia</span><h2 class="section-title">Centro Médico ABC</h2><p class="section-copy">El reto era llegar a un target AB+ en CDMX sin desperdiciar presupuesto en cobertura nacional. La solución combinó compra local, deportes premium, cine VIP, streaming y OOH.</p></div>
+        <div class="metric-grid"><div class="metric"><b>CDMX</b><span>Cobertura focalizada</span></div><div class="metric"><b>AB+</b><span>Audiencia de alto valor</span></div><div class="metric"><b>3 años</b><span>Presencia sostenida</span></div></div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap method">
+        <div><h2 class="section-title">Circle Omnichannel Model</h2><p class="section-copy">Simplificamos la selección de medios según la etapa del funnel: conocimiento, consideración y conversión. El objetivo es que cada peso tenga una función clara dentro del ecosistema.</p></div>
+        <div class="funnel"><div class="step"><b>01. Diagnóstico</b><span>Analizamos inversión, audiencia, cobertura y competencia.</span></div><div class="step"><b>02. Planeación</b><span>Definimos mix, cobertura, frecuencia y KPI por canal.</span></div><div class="step"><b>03. Compra y negociación</b><span>Centralizamos medios para mejorar eficiencia y condiciones.</span></div><div class="step"><b>04. Optimización</b><span>Medimos desempeño y ajustamos inversión durante campaña.</span></div></div>
+      </div>
+    </section>
+    <section class="final">
+      <h2>Antes de invertir más, revisa si estás invirtiendo mejor.</h2>
+      <p>Solicita un diagnóstico de TV y Streaming para identificar oportunidades de alcance, eficiencia y reducción de desperdicio.</p>
+      <a class="btn" href="#diagnostico">Solicitar diagnóstico</a>
+    </section>
+  </main>
+</body>
+</html>
