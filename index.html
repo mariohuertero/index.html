@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Circle Media | TV + Streaming</title>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <style>
     :root{
       --black:#08080c;
@@ -28,6 +30,7 @@
     h1{font-size:64px;line-height:.93;letter-spacing:-.06em;margin:0 0 24px;max-width:760px}h1 strong{background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
     .sub{font-size:21px;line-height:1.45;color:#343442;max-width:690px;margin:0 0 34px}.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:999px;text-decoration:none;font-weight:900}.btn.primary{background:linear-gradient(90deg,var(--pink),var(--purple));color:#fff}.btn.secondary{border:1px solid var(--line);color:var(--black);background:#fff}
     .proof{margin-top:32px;color:var(--gray);font-size:13px}.proof b{color:var(--black)}
+    .platform-strip{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 30px}.platform{height:46px;min-width:108px;padding:0 18px;border:1px solid var(--line);border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:950;letter-spacing:-.03em;box-shadow:0 12px 30px rgba(18,18,32,.07)}.platform.netflix{color:#e50914}.platform.prime{color:#00a8e1}.platform.amazon{color:#111118}.platform.vix{color:#ff6a00}.platform.youtube{color:#ff0000}
     .form-card{background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px;box-shadow:0 24px 70px rgba(18,18,32,.12)}.form-card h2{font-size:27px;letter-spacing:-.04em;margin:0 0 8px}.form-card p{margin:0 0 20px;color:var(--gray);line-height:1.4}.field{margin-bottom:12px}.field input,.field select{width:100%;height:50px;border:1px solid var(--line);border-radius:14px;padding:0 15px;font-size:14px;background:#fbfbfd}.form-note{font-size:11px;color:#8b8b98;line-height:1.4;margin-top:12px}
     section{padding:72px 7vw}.wrap{max-width:1240px;margin:0 auto}.section-title{font-size:42px;line-height:1.02;letter-spacing:-.05em;margin:0 0 16px}.section-copy{font-size:18px;line-height:1.55;color:#555566;max-width:760px;margin:0 0 34px}.logos{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.logo-tile{height:88px;border:1px solid var(--line);border-radius:20px;display:flex;align-items:center;justify-content:center;background:#fff;font-weight:900;color:#21212b;letter-spacing:-.02em}
     .problem{background:var(--black);color:#fff}.problem .section-copy{color:#c8c8d2}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055);border-radius:24px;padding:26px}.card h3{font-size:22px;margin:0 0 10px;letter-spacing:-.03em}.card p{margin:0;color:#d2d2dc;line-height:1.45}
@@ -42,33 +45,34 @@
 <body>
   <header class="topbar">
     <div class="logo">CIRCLE <span>media agency</span></div>
-    <a class="top-cta" href="#diagnostico">Solicitar diagnóstico</a>
+    <a class="top-cta" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mario-huertero/auditoria-de-medios'});return false;">Solicitar auditoría</a>
   </header>
   <main>
     <section class="hero">
       <div class="hero-grid">
         <div>
           <div class="eyebrow">TV + Streaming + Connected TV</div>
-          <h1>Tu audiencia ya no está viendo solo <strong>televisión.</strong></h1>
-          <p class="sub">Diseñamos estrategias de TV, Streaming y Connected TV para generar alcance incremental, reducir desperdicio y colocar tu marca en los momentos de mayor atención.</p>
+          <h1>Tu marca en todos los <strong>streamings.</strong></h1>
+          <p class="sub">Planeamos, negociamos y activamos campañas en TV, Connected TV y plataformas de streaming para que tu marca aparezca donde hoy se concentra la atención.</p>
+          <div class="platform-strip" aria-label="Plataformas de streaming"><div class="platform netflix">NETFLIX</div><div class="platform prime">prime video</div><div class="platform amazon">amazon ads</div><div class="platform vix">ViX</div><div class="platform youtube">YouTube</div></div>
           <div class="hero-actions">
-            <a class="btn primary" href="#diagnostico">Solicitar diagnóstico de medios</a>
-            <a class="btn secondary" href="#caso">Ver caso ABC</a>
+            <a class="btn primary" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mario-huertero/auditoria-de-medios'});return false;">Solicitar auditoría de medios</a>
+            <a class="btn secondary" href="#caso">Ver caso Valvoline</a>
           </div>
-          <div class="proof">Planeación, negociación, compra, optimización y monitoreo para marcas como <b>Valvoline, ABC, GS1, TEKA y Price Shoes.</b></div>
+          <div class="proof">Planeación, negociación, compra, optimización y monitoreo para marcas como <b>Valvoline, GS1, TEKA y Price Shoes.</b></div>
         </div>
         <aside class="form-card" id="diagnostico">
-          <h2>Agenda un diagnóstico</h2>
-          <p>Revisamos tu inversión actual y detectamos oportunidades de alcance, frecuencia y eficiencia.</p>
+          <h2>Agenda una auditoría</h2>
+          <p>Revisamos tu inversión actual en TV, Streaming y Connected TV para detectar desperdicio, duplicidad de audiencias y oportunidades de eficiencia.</p>
           <form>
             <div class="field"><input placeholder="Nombre" /></div>
             <div class="field"><input placeholder="Empresa" /></div>
             <div class="field"><input placeholder="Correo corporativo" /></div>
             <div class="field"><input placeholder="WhatsApp" /></div>
             <div class="field"><select><option>Presupuesto mensual estimado</option><option>$100k - $300k MXN</option><option>$300k - $800k MXN</option><option>$800k+ MXN</option></select></div>
-            <a class="btn primary" style="width:100%" href="#">Quiero mi diagnóstico</a>
+            <a class="btn primary" style="width:100%" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mario-huertero/auditoria-de-medios'});return false;">Quiero mi auditoría</a>
           </form>
-          <div class="form-note">Al enviar tus datos aceptas ser contactado por Circle Media Agency para fines comerciales.</div>
+          <div class="form-note">Al enviar tus datos aceptas ser contactado por Circle Media Agency para recibir una auditoría comercial de medios.</div>
         </aside>
       </div>
     </section>
@@ -76,7 +80,7 @@
       <div class="wrap">
         <h2 class="section-title">Marcas que han confiado en Circle</h2>
         <p class="section-copy">Usamos data, negociación y entendimiento del consumidor mexicano para construir planes omnicanal con impacto real.</p>
-        <div class="logos"><div class="logo-tile">VALVOLINE</div><div class="logo-tile">ABC</div><div class="logo-tile">GS1</div><div class="logo-tile">TEKA</div><div class="logo-tile">PRICE SHOES</div></div>
+        <div class="logos"><div class="logo-tile">VALVOLINE</div><div class="logo-tile">GS1</div><div class="logo-tile">TEKA</div><div class="logo-tile">PRICE SHOES</div><div class="logo-tile">BRANDED CONTENT</div></div>
       </div>
     </section>
     <section class="problem">
@@ -95,8 +99,8 @@
     </section>
     <section class="case" id="caso">
       <div class="wrap case-box">
-        <div><span class="case-tag">Caso de referencia</span><h2 class="section-title">Centro Médico ABC</h2><p class="section-copy">El reto era llegar a un target AB+ en CDMX sin desperdiciar presupuesto en cobertura nacional. La solución combinó compra local, deportes premium, cine VIP, streaming y OOH.</p></div>
-        <div class="metric-grid"><div class="metric"><b>CDMX</b><span>Cobertura focalizada</span></div><div class="metric"><b>AB+</b><span>Audiencia de alto valor</span></div><div class="metric"><b>3 años</b><span>Presencia sostenida</span></div></div>
+        <div><span class="case-tag">Caso de referencia</span><h2 class="section-title">Valvoline</h2><p class="section-copy">La marca necesitaba crecer en México sin competir únicamente contra marcas históricas con décadas de presencia publicitaria. Construimos una estrategia de medios progresiva, con entendimiento del consumidor mexicano y una lógica omnicanal para ganar presencia, consideración y distribución.</p></div>
+        <div class="metric-grid"><div class="metric"><b>Top 5</b><span>Objetivo de posicionamiento</span></div><div class="metric"><b>Omnicanal</b><span>TV, deportes, digital y medios locales</span></div><div class="metric"><b>México</b><span>Crecimiento de afuera hacia adentro</span></div></div>
       </div>
     </section>
     <section>
@@ -107,8 +111,8 @@
     </section>
     <section class="final">
       <h2>Antes de invertir más, revisa si estás invirtiendo mejor.</h2>
-      <p>Solicita un diagnóstico de TV y Streaming para identificar oportunidades de alcance, eficiencia y reducción de desperdicio.</p>
-      <a class="btn" href="#diagnostico">Solicitar diagnóstico</a>
+      <p>Solicita una auditoría de TV y Streaming para identificar oportunidades de alcance, eficiencia y reducción de desperdicio.</p>
+      <a class="btn" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mario-huertero/auditoria-de-medios'});return false;">Solicitar auditoría</a>
     </section>
   </main>
 </body>
